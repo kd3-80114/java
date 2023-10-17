@@ -29,7 +29,5 @@ public static void main(String[] args) {
 	d=d-2;
 	System.out.println();
 	}
-	
-
 }
 }

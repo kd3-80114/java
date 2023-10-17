@@ -2,6 +2,7 @@ package com.app.library.tester;
 import com.app.library.*;
 import java.util.*;
 import java.util.ArrayList;
+
 public class Tester 
 {
 	public static void main(String args[])
@@ -38,21 +39,39 @@ public class Tester
 		case 4:
 			System.out.println("Eneter ISBN to search for");
 			String isbn=sc.next();
-		}
+			Library l=new Library();
+			l.setIsbn(isbn);
+			if(books.contains(l))
+				System.out.println("Book exists");
+			else
+				System.out.println("Book does not exist");	
+		break;
+		case 5:
+			books.clear();
+		break;
+		case 6:
+			System.out.println("No of books in Library"+books.size());
+		break;
+		case 7:
+			class SortBookbyPrice implements Comparator<Library>
+			{
+
+				@Override
+				public int compare(Library l1, Library l2) {
+					return -Double.compare(l1.getPrice(),l2.getPrice());	
+				}
+				
+			}
+			SortBookbyPrice s=new SortBookbyPrice();
+			books.sort(s);
+			System.out.println("Library after sorting");
+			for(Library ele:books)
+			{
+				System.out.println(ele.toString());	
+			}
+		break;
+		}		
 	}
-		
-	
 	}
 
 }
-//String isbn,double price,String authorName,int quantity
-//4. Store book details in a library in a list -- ArrayList.
-//Book details: isbn(string), price(double), authorName(string), quantity(int)
-//Write a menu driven (do-while + switch-case) program to
-//1. Add new book in list.
-//2. Display all books in forward order.
-//3. Delete at book given index -- list.remove(index);
-//4. Check if book with given isbn is in list or not
-//5. Delete all books in list
-//6. Display number of books in list
-//7. Sort all books by price in desc order -- list.sort();

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Testpointarray1 {
 	public static void main(String[] args) {
-		int noofPoints,choice,index,flag,startpoint,endpoint;
+		int noofPoints,choice,index,startpoint,endpoint;
 		//Point point=new Point();
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter No of Points");
@@ -18,6 +18,7 @@ public class Testpointarray1 {
 		{
 			System.out.println("Enter cordinates for point "+(i+1));
 			point[i].accept();
+			
 		}
 		Menu menu=new Menu();
 		while((choice=menu.displaymenu())!=0)
@@ -53,15 +54,15 @@ public class Testpointarray1 {
 				System.out.println("Enter the index of End point");
 				endpoint=scanner.nextInt();
 				//System.out.println("Distance between specified points"+point[startpoint].calculateDistance(point[endpoint]));
-				if(point[startpoint].isEqual(point[endpoint]))
+				if(point[startpoint-1].isEqual(point[endpoint-1]))
 				{
-					point[startpoint].display();
+					point[startpoint-1].display();
 				}
 				else 
 				{
 				//System.out.println("Distance between point "+point[startpoint].display()+"Loacated at index"+(startpoint+1)+" and point "+point[endpoint].display()+" located at index "+(endpoint+1));;	
 					System.out.print("Points are not equal hence distance between them is ");
-					System.out.println(point[startpoint].calculateDistance(point[endpoint]));
+					System.out.println(point[startpoint-1].calculateDistance(point[endpoint-1]));
 				}
 				break;
 				
