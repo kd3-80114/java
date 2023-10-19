@@ -10,21 +10,22 @@ public class ArrayDuplicate
 	System.out.println("Enter Number of elemetns");
 	size=sc.nextInt();
 	String strings[]=new String[size];
-	String strings1[]=new String[size+1];
+	String strings1[]=new String[size];
 	for(int i=0;i<size;i++)
 	{
 		System.out.println("Enter element at index"+(i+1));
 		strings[i]=sc.next();
 	}
-	for(int i=0;i<size;i++)
+	for(int i=0;i<size-1;i++)
 	{
 		for(int j=i+1;j<size;j++)
-		{
+		{	
 			if(strings[i].equals(strings[j]))
 			{
 				strings1[index]=strings[i];
 				index++;
-			}	
+				break;
+			}
 		}
 	}
 	System.out.println("Duplicate elements are ");

@@ -20,7 +20,7 @@ public static void main(String[] args)
 	map.put(2,new Students(2,"ajkbcd"));
 	map.put(2,new Students(2,"Sgj"));
 
-	Students s=new Students();
+	
 	int choice=1;
 	while(choice!=0)
 	{
@@ -32,6 +32,7 @@ public static void main(String[] args)
 		switch(choice)
 		{
 		case 1:
+			Students s=new Students();
 			s.acceptData();
 			map.put(s.getRollno(),s);
 			break;

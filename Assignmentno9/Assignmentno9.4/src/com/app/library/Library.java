@@ -58,13 +58,7 @@ public class Library
 	public String toString() {
 		return "ISBN ="+isbn+", Price = "+price+", AuthorName = "+authorName+", Quantity = "+quantity;
 	}
-//	@Override
-//	public int hashCode() {
-//		final int prime = 31;
-//		int result = 1;
-//		result = prime * result + ((isbn == null) ? 0 : isbn.hashCode());
-//		return result;
-//	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
