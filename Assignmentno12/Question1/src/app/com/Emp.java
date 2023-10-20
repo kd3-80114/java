@@ -13,7 +13,7 @@ interface Emp
 		double income=0.0;
 		for(Emp ele:arr)
 		{
-			income+=ele.getSal()*ele.calIncentives();
+			income+=ele.getSal()+ele.calIncentives();
 		}
 		
 		return income;
